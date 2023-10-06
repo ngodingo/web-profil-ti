@@ -24,7 +24,7 @@ cd web-profil-ti
 npm install
 ```
 
-4.Then, run your app
+4. Then, run your app
 
 ```bash
 npm run dev
