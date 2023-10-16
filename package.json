@@ -4,7 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "dev": "live-server -q --port=3000 & open-cli http://localhost:3000/src & tailwindcss -i ./src/input.css -o ./dist/output.css --watch",
+    "dev": "live-server -q --port=3000 & open-cli http://localhost:3000 & tailwindcss -i ./src/input.css -o ./dist/output.css --watch",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "Ngodingo",
