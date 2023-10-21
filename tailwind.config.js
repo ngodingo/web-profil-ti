@@ -8,6 +8,13 @@ module.exports = {
         cygre: ['Cygre', 'serif'],
         fira: ['Fira Code', 'serif'],
       },
+      colors: {
+        yellow: '#FAFF00',
+        gray: '#505050',
+      },
+      boxShadow: {
+        solid: '10px 10px gray',
+      },
     },
   },
   plugins: [],
