@@ -1,3 +1,30 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+@layer base {
+  @font-face {
+    font-family: 'Tango Sans';
+    font-weight: 400;
+    src: url(/public/fonts/TangoSans-Regular.ttf);
+  }
+  @font-face {
+    font-family: 'Cygre';
+    font-weight: 400;
+    src: url(/public/fonts/Cygre-Regular.ttf);
+  }
+  @font-face {
+    font-family: 'Cygre';
+    font-weight: 500;
+    src: url(/public/fonts/Cygre-SemiBold.ttf);
+  }
+  @font-face {
+    font-family: 'Fira Code';
+    font-weight: 400;
+    src: url(/public/fonts/FiraCode-Regular.ttf);
+  }
+
+  html {
+    @apply font-cygre;
+  }
+}
