@@ -25,6 +25,21 @@
   }
 
   html {
-    @apply font-cygre;
+    @apply font-cygre scroll-smooth;
+  }
+}
+
+@layer components {
+  .btn {
+    @apply px-5 py-2.5 rounded-lg;
+  }
+  .btn-color-primary {
+    @apply bg-black text-white border border-black font-semibold  hover:bg-neutral-800 active:ring active:ring-neutral-700 active:bg-black;
+  }
+  .btn-color-secondary {
+    @apply bg-white text-black border border-black font-semibold  hover:bg-neutral-200 active:ring active:ring-neutral-300 active:bg-white;
+  }
+  .btn-with-icon {
+    @apply flex justify-center items-center gap-2;
   }
 }

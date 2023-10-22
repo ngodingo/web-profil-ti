@@ -15,6 +15,15 @@ module.exports = {
       boxShadow: {
         solid: '10px 10px gray',
       },
+      keyframes: {
+        walk: {
+          '0%': { transform: 'translateX(100%)' },
+          '100%': { transform: 'translateX(-100%)' },
+        },
+      },
+      animation: {
+        walk: 'walk 15s linear infinite',
+      },
     },
   },
   plugins: [],
