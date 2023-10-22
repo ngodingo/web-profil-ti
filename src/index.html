@@ -8,7 +8,7 @@
   </head>
   <body class="relative">
     <!--  -->
-    <nav class="fixed z-30 w-full h-16 sm:h-20 border-b border-gray bg-white flex justify-between items-center px-3 sm:px-8 top-8 sm:top-0 sm:pl-20">
+    <nav id="nav-top" class="fixed z-30 w-full h-16 sm:h-20 border-b border-gray bg-white flex justify-between items-center px-3 sm:px-5 top-8 sm:top-0 sm:pl-20">
       <a href="#">
         <div class="flex gap-1">
           <div class="flex-none w-[42px]">
@@ -20,18 +20,20 @@
           </div>
         </div>
       </a>
-      <button id="nav-menu-btn" class="flex gap-2 items-center">
+      <button id="nav-menu-btn" class="flex gap-2 items-center hover:bg-yellow p-2">
         <span class="text-sm font-semibold text-gray hidden sm:block">Menu</span>
         <div id="nav-button">
-          <img src="/public/icons/menu.svg" alt="nav-button" />
+          <img id="nav-menu-icon" src="/public/icons/menu.svg" alt="nav-button" />
         </div>
       </button>
     </nav>
 
-    <header id="announcement" class="fixed z-40 w-full h-8 border-b border-black sm:w-16 sm:h-screen sm:border-r overflow-hidden">
-      <div class="flex w-full h-full relative sm:w-[100vh] sm:h-16 sm:rotate-[270deg] sm:origin-top-left sm:top-[100vh]">
+    <header id="announcement" class="fixed z-40 w-full h-8 border-b border-black sm:w-14 sm:h-screen sm:border-r overflow-hidden">
+      <div class="flex w-full h-full relative sm:w-[100vh] sm:h-14 sm:rotate-[270deg] sm:origin-top-left sm:top-[100vh]">
         <div class="w-full h-full overflow-hidden bg-yellow">
-          <div class="h-full flex items-center gap-2 relative min-w-max">
+          <div class="h-full flex items-center gap-4 relative min-w-max animate-walk">
+            <span class="block w-2.5 h-2.5 bg-black"></span>
+            <span class="font-fira text-xs sm:text-sm">Dibuka Pendafataran SNIK 2023! Ayo Daftar Sekarang!</span>
             <span class="block w-2.5 h-2.5 bg-black"></span>
             <span class="font-fira text-xs sm:text-sm">Dibuka Pendafataran SNIK 2023! Ayo Daftar Sekarang!</span>
           </div>
@@ -43,40 +45,45 @@
       </div>
     </header>
 
-    <aside class="hidden lg:block fixed z-20 right-0 w-52 h-screen bg-white flex-none border-l border-black">
-      <div class="h-full w-full flex flex-col justify-between">
-        <span class="h-20"></span>
-        <ul class="text-sm font-semibold text-end block py-8 pr-8 pl-16 flex flex-col gap-4">
-          <li><a href="#">Tentang</a></li>
-          <li><a href="#">Organisasi</a></li>
-          <li><a href="#">Grup</a></li>
-          <li><a href="#">Berita</a></li>
-          <li><a href="#">Event</a></li>
-          <li><a href="#">Informasi</a></li>
-          <li><a href="#">Showcase</a></li>
-          <li><a href="#">Cari Partner</a></li>
-          <li><a href="#">Helpdesk</a></li>
+    <nav id="nav-menu" class="fixed z-20 right-0 w-52 h-screen bg-white flex-none border-l border-black translate-x-full transition-transform">
+      <div class="grid place-items-center h-full">
+        <ul class="text-sm font-semibold text-end py-28 pr-5 pl-16">
+          <li><a class="nav-menu-item w-full inline-block p-2 hover:underline" href="#">Tentang</a></li>
+          <li><a class="nav-menu-item w-full inline-block p-2 hover:underline" href="#">Organisasi</a></li>
+          <li><a class="nav-menu-item w-full inline-block p-2 hover:underline" href="#">Grup</a></li>
+          <li><a class="nav-menu-item w-full inline-block p-2 hover:underline" href="#">Berita</a></li>
+          <li><a class="nav-menu-item w-full inline-block p-2 hover:underline" href="#">Event</a></li>
+          <li><a class="nav-menu-item w-full inline-block p-2 hover:underline" href="#">Informasi</a></li>
+          <li><a class="nav-menu-item w-full inline-block p-2 hover:underline" href="#">Showcase</a></li>
+          <li><a class="nav-menu-item w-full inline-block p-2 hover:underline" href="#">Cari Partner</a></li>
+          <li><a class="nav-menu-item w-full inline-block p-2 hover:underline" href="#">Helpdesk</a></li>
         </ul>
-        <a href="#" class="block bg-black py-6 grid place-items-center">
-          <div class="flex items-center gap-1">
-            <span class="text-white text-sm font-semibold">Back to Top </span>
-            <div>
-              <img src="/public/icons/arrow_upward_alt.svg" alt="arrow-up" />
-            </div>
-          </div>
-        </a>
       </div>
-    </aside>
+    </nav>
 
-    <main class="pt-16 sm:pt-20 sm:pl-16 lg:pr-52">
+    <a href="#" id="scroll-top-btn" class="fixed z-30 bottom-0 right-0 bg-black lg:w-52 lg:h-fit p-4 lg:py-5 grid place-items-center btn-color-primary">
+      <div class="flex items-center gap-1">
+        <span class="text-white text-sm font-semibold hidden lg:inline-block">Back to Top </span>
+        <div>
+          <img src="/public/icons/arrow_upward_alt.svg" alt="arrow-up" />
+        </div>
+      </div>
+    </a>
+
+    <main class="pt-16 sm:pt-20 sm:pl-16 lg:pr-52 transition-all">
       <!-- SECTION 1: HEADLINE -->
       <section id="headline" class="pl-6 sm:pl-14 py-16">
         <div class="grid grid-cols-1 sm:grid-cols-2 gap-x-6 gap-y-12 items-center">
           <div class="max-w-xs sm:max-w-sm">
             <h1 class="font-tango text-4xl">Collaborate, innovate, and create the future together!</h1>
             <div class="flex gap-2 mt-8">
-              <button class="bg-black text-white border border-black font-semibold px-5 py-2.5 rounded-lg">Join Us</button>
-              <button class="bg-white text-black border border-black font-semibold px-5 py-2.5 rounded-lg">Explore</button>
+              <a type="button" href="https://unnes.ac.id/admission/" target="_blank" class="btn btn-color-primary btn-with-icon">
+                <span>Join Us</span>
+                <div><img src="/public/icons/arrow_outward.svg" alt="arrow icon" /></div>
+              </a>
+              <a type="button" href="" class="btn btn-color-secondary">
+                <span> Explore </span>
+              </a>
             </div>
           </div>
           <div class="">
@@ -94,7 +101,7 @@
 &lt;body&gt;
   &lt;div&gt; 
     &lt;p&gt;
-      Collaborate, innovate, and create the future together! 
+      <span id="headline-code"></span><span id="text-cursor" class="inline-block h-4 w-1 bg-gray translate-y-1"></span>
     &lt;/p&gt; 
   &lt;div&gt; 
 &lt;/body&gt;
