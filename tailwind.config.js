@@ -11,6 +11,7 @@ module.exports = {
       colors: {
         yellow: '#FAFF00',
         gray: '#505050',
+        neutral50: '#7F7F7F',
       },
       boxShadow: {
         solid: '10px 10px gray',
