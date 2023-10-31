@@ -12,6 +12,7 @@ const breakpoint = {
 };
 
 const isSmScreen = () => body.clientWidth >= breakpoint.sm;
+const isMdScreen = () => body.clientWidth >= breakpoint.md;
 const isLgScreen = () => body.clientWidth >= breakpoint.lg;
 
 /**
@@ -130,3 +131,31 @@ function typingCodeAnimationHeadline() {
   type();
 }
 typingCodeAnimationHeadline();
+
+
+/**
+ *
+ * ==== EVENT SECTION ====
+ *
+ */
+const cards = document.getElementById('cards-event');
+const card1 = document.getElementById('card1-event');
+const card2 = document.getElementById('card2-event');
+const card3 = document.getElementById('card3-event');
+
+cards.addEventListener('mouseover', function() {
+  card1.classList.remove('rotate-[17deg]');
+  card2.classList.remove('rotate-[4deg]');
+  card3.classList.remove('rotate-[-17deg]');
+  
+  // Add Tailwind CSS transition classes for smooth transition
+  card1.classList.add( 'transition-transform');
+  card2.classList.add( 'transition-transform');
+  card3.classList.add( 'transition-transform');
+});
+
+cards.addEventListener('mouseout', function() {
+  card1.classList.add('rotate-[17deg]');
+  card2.classList.add('rotate-[4deg]');
+  card3.classList.add('rotate-[-17deg]');
+});
