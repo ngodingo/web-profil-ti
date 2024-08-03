@@ -14,6 +14,18 @@ This website is a part of the [Open-Kode](https://github.com/ngodingo/open-kode)
 └── ...                 # Other configuration
 ```
 
+
+## Backlog Ideas 
+
+### Front-end
+- [ ] Migrasi ke Next.JS
+
+### Back-end
+- [ ] CRUD Event
+- [ ] CRUD Berita
+- [ ] CRUD Grup
+- [ ] CRUD Organisasi
+
 ## Getting Started
 
 To get started with this project, please read the [contribution guidelines](https://github.com/ngodingo/open-kode) provided in the Open-Kode repository description.
