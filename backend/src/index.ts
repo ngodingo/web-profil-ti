@@ -1,4 +1,4 @@
-import { Elysia, NotFoundError } from "elysia";
+import { Elysia, NotFoundError, t } from "elysia";
 
 
 const app = new Elysia()
@@ -34,6 +34,11 @@ const app = new Elysia()
       id: currentId,
       ...body,
     };
+  }, {
+    body: t.Object({
+      title: t.String(),
+      content: t.String(),
+    })
   })
   .get("/news/:id", async ({ params }) => {
     const { id } = params
@@ -47,6 +52,10 @@ const app = new Elysia()
     }
 
     return data
+  }, {
+    params: t.Object({
+      id: t.Number()
+    })
   })
   .put("/news/:id", async ({ params, body }) => {
 
@@ -71,6 +80,14 @@ const app = new Elysia()
     Bun.write(`${import.meta.dir}/news.json`, JSON.stringify(newsLocal))
 
     return newsLocal[index];
+  }, {
+    params: t.Object({
+      id: t.Number()
+    }),
+    body: t.Object({
+      title: t.String(),
+      content: t.String(),
+    })
   })
   .delete("/news/:id", async ({ params }) => {
 
@@ -89,7 +106,10 @@ const app = new Elysia()
     Bun.write(`${import.meta.dir}/news.json`, JSON.stringify(newsLocal))
 
     return "Deleted News ID : " + params.id
-  })
+  },{
+    params: t.Object({
+      id: t.Number()
+  })})
   .listen(3000);
 
 console.log(
