@@ -1,11 +1,11 @@
 import { Elysia, NotFoundError, t } from "elysia";
-
+import db from "./db/db";
 
 const app = new Elysia()
   .get("/", () => "Hello Ngodingo")
   .get("/news", async () => {
-    const data = await Bun.file(`${import.meta.dir}/news.json`).json();
-    return data;
+    const data = await db`SELECT * FROM news`;
+    return Response.json(data);
   })
   .post("/news", async ({ body }: { body: { title: string, content: string } }) => {
 
@@ -106,10 +106,11 @@ const app = new Elysia()
     Bun.write(`${import.meta.dir}/news.json`, JSON.stringify(newsLocal))
 
     return "Deleted News ID : " + params.id
-  },{
+  }, {
     params: t.Object({
       id: t.Number()
-  })})
+    })
+  })
   .listen(3000);
 
 console.log(
