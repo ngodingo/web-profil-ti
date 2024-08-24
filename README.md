@@ -21,10 +21,11 @@ This website is a part of the [Open-Kode](https://github.com/ngodingo/open-kode)
 - [ ] Migrasi ke Next.JS
 
 ### Back-end
+- [ ] CRUD Berita (On Progress)
 - [ ] CRUD Event
-- [ ] CRUD Berita
 - [ ] CRUD Grup
 - [ ] CRUD Organisasi
+- [ ] CRUD Inquiry (Pertanyaan, Kritik, dan Saran)
 
 ## Getting Started
 
